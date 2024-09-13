@@ -1,0 +1,119 @@
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+window#waybar {
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid #8266E1;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+#workspaces button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #5E44B0;
+    border: 1px solid transparent;
+    transition-duration: 250ms
+}
+
+#workspaces button.active {
+    background: #8266e1;
+}
+
+#workspaces button.urgent {
+    background-color: #1C1244;
+}
+
+
+#clock,
+#battery,
+#network,
+#pulseaudio{
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+/*#pulseaudio,
+#network {
+    border-right: 1px solid
+}*/
+
+
+#window,
+#workspaces {
+    font-size:26px;
+    margin: 0 10px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+#clock {
+    font-size: 23px;
+}
+
+#battery {
+    margin: 10px;
+    color: #ffffff;
+}
+
+#battery.charging {
+    color: #4ad66d;
+}
+
+#battery.plugged {
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        color: #d00000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    margin: 10px;
+    color: #ffffff;
+}
+
+#network.disconnected {
+    background-color: transparent;
+}
+
+#pulseaudio {
+    color: #ffffff;
+    margin: 5px;
+}
+
+#pulseaudio.muted {
+    color: #ffffff;
+}
