@@ -44,6 +44,17 @@ packages=(
 	texlive-pictures
 	thunar
 	vscodium-bin
+
+	grim
+	slurp
+	hyprland
+	hyprlock
+	hyprpaper
+	hyprpicker
+	waybar
+	wl-clipboard
+	wofi
+	mako
 )
 
 for str in ${myArray[@]}; do
