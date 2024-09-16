@@ -126,3 +126,5 @@ sudo systemctl enable sddm
 sleep 2
 
 cp -R dotfiles ~/.config/
+
+reboot
