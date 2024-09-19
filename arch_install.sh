@@ -81,15 +81,26 @@ install_software() {
 	fi
 }
 
-# give the user an option to exit out
-read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install (y,n) ' CONTINST
-if [[ $CONTINST == "Y" || $CONTINST == "y" ]]; then
-	echo -e "$CNT - Setup starting..."
-	sudo touch /tmp/hyprv.tmp
-else
-	echo -e "$CNT - This script will now exit, no changes were made to your system."
-	exit
+if [ ! -f /sbin/yay ]; then
+	echo -en "Configuring yay."
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si --noconfirm
+	if [ -f /sbin/yay ]; then
+		echo -e "yay configured"
+		cd ..
+
+		echo -en "Updating yay."
+		yay -Suy --noconfirm
+		echo -e "yay updated."
+	else
+		echo -e "yay install failed, please check the install.log"
+		exit
+	fi
 fi
+
+pacman -R yay
+rm -rf yay
 
 if [ ! -f /sbin/yay ]; then
 	echo -en "Configuring yay."
@@ -125,6 +136,14 @@ echo -e "Enabling the SDDM Service..."
 sudo systemctl enable sddm
 sleep 2
 
-cp -R dotfiles ~/.config/
+rm -rf ~/.config/hypr/
+rm -rf ~/.config/kitty/
+rm -rf ~/.config/waybar/
+
+cp -R dotfiles/hypr ~/.config/
+cp -R dotfiles/kitty ~/.config/
+cp -R dotfiles/waybar ~/.config/
+
+
 
 reboot
