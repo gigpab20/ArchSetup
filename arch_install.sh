@@ -43,18 +43,30 @@ packages=(
 	texlive-latexrecommended
 	texlive-mathscience
 	texlive-pictures
-	thunar
+	nemo
 	vscodium-bin
 	jetbrains-toolbox
+    flameshot
+	otf-font-awesome
+	openjdk-11
+	openjdk-17
+	openjdk-21
 
-	grim
+)
+
+i3=(
+    i3-wm
+    rofi
+)
+
+hyprland=(
+    grim
 	fkill
 	slurp
 	hyprlock
 	hyprpaper
 	hyprpicker
 	waybar
-	otf-font-awesome
 	wl-clipboard
 	wofi
 	mako
@@ -115,8 +127,34 @@ if [ ! -f /sbin/yay ]; then
 	fi
 fi
 
-echo -e "Installing Hyprland, this may take a while..."
-install_software hyprland
+echo -e "hyprland or i3? (h|i)"
+read DECISION
+if [[$DECISION == "h"]]; then
+
+    echo -e "Installing Hyprland, this may take a while..."
+    install_software hyprland
+    for SOFTWR in ${hyprland[@]}; do
+	    install_software $SOFTWR
+    done
+
+    rm -rf ~/.config/hypr/
+    rm -rf ~/.config/kitty/
+    rm -rf ~/.config/waybar/
+
+    cp -r dotfiles/hypr ~/.config/
+    cp -r dotfiles/kitty ~/.config/
+    cp -r dotfiles/waybar ~/.config/
+
+else
+    echo -e "Installing i3, this may take a while..."
+    install_software i3-wm
+    for SOFTWR in ${i3[@]}; do
+	    install_software $SOFTWR
+    done
+
+    rm -rf ~/.config/kitty/
+    cp -r dotfiles/kitty ~/.config/
+fi
 
 echo -e "Installing main components, this may take a while..."
 for SOFTWR in ${packages[@]}; do
@@ -131,13 +169,7 @@ echo -e "Enabling the SDDM Service..."
 sudo systemctl enable sddm
 sleep 2
 
-rm -rf ~/.config/hypr/
-rm -rf ~/.config/kitty/
-rm -rf ~/.config/waybar/
 
-cp -r dotfiles/hypr ~/.config/
-cp -r dotfiles/kitty ~/.config/
-cp -r dotfiles/waybar ~/.config/
 
 cd ~/Downloads/
 curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz
@@ -149,5 +181,8 @@ cd ~/Downloads/
 curl -O https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
 chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh 
 sudo ./Anaconda3-2024.06-1-Linux-x86_64.sh
+
+mkdir ~/Documents/
+mkdir ~/Pictures/Screenshots
 
 reboot
