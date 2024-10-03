@@ -45,6 +45,7 @@ packages=(
 	texlive-pictures
 	thunar
 	vscodium-bin
+	jetbrains-toolbox
 
 	grim
 	slurp
@@ -52,6 +53,7 @@ packages=(
 	hyprpaper
 	hyprpicker
 	waybar
+	otf-font-awesome
 	wl-clipboard
 	wofi
 	mako
@@ -135,5 +137,16 @@ rm -rf ~/.config/waybar/
 cp -R dotfiles/hypr ~/.config/
 cp -R dotfiles/kitty ~/.config/
 cp -R dotfiles/waybar ~/.config/
+
+cd ~/Downloads/
+curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz
+mkdir ~/development/
+tar -xf ~/Downloads/flutter_linux_3.24.3-stable.tar.xz -C ~/development/
+echo 'export PATH="~/development/flutter/bin:$PATH"' >> ~/.bash_profile
+
+cd ~/Downloads/
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh 
+sudo ./Anaconda3-2024.06-1-Linux-x86_64.sh
 
 reboot
