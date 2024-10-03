@@ -46,11 +46,11 @@ packages=(
 	nemo
 	vscodium-bin
 	jetbrains-toolbox
-    flameshot
+        flameshot
 	otf-font-awesome
-	openjdk-11
-	openjdk-17
-	openjdk-21
+	jdk11-openjdk
+	jdk17-openjdk
+	jdk21-openjdk
 
 )
 
