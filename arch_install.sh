@@ -174,7 +174,7 @@ sudo systemctl enable sddm
 sleep 2
 
 
-
+mkdir ~/Downloads/
 cd ~/Downloads/
 curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.3-stable.tar.xz
 mkdir ~/development/
@@ -183,7 +183,7 @@ echo 'export PATH="~/development/flutter/bin:$PATH"' >> ~/.bash_profile
 
 cd ~/Downloads/
 curl -O https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
-chmod +x Anaconda3-2024.06-1-Linux-x86_64.sh 
+chmod +x ~/Downloads/Anaconda3-2024.06-1-Linux-x86_64.sh 
 sudo ./Anaconda3-2024.06-1-Linux-x86_64.sh
 
 mkdir ~/Documents/
