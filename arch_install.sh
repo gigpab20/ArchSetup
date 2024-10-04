@@ -189,4 +189,15 @@ sudo ./Anaconda3-2024.06-1-Linux-x86_64.sh
 mkdir ~/Documents/
 mkdir ~/Pictures/Screenshots
 
+sudo mkdir /mnt/data_disk
+sudo mount /dev/nvme1n1p1 /mnt/data_disk
+sudo chown -R $USER:$USER /mnt/data_disk
+
+sudo blkid /dev/nvme1n1p1
+sudo nano /etc/fstab
+UUID=UUID=e6fed6a2-1419-452d-b970-873adbbedc3e /mnt/Data ext4 defaults 0 2 /mnt/data ext4 defaults 0 2
+
+
+
+
 reboot
