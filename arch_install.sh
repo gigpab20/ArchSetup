@@ -57,6 +57,9 @@ packages=(
 i3=(
     i3-wm
     rofi
+	i3lock
+	polybar
+	xrandr
 )
 
 hyprland=(
