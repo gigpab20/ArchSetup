@@ -43,10 +43,10 @@ packages=(
 	texlive-latexrecommended
 	texlive-mathscience
 	texlive-pictures
-	nemo
+	dolphin
 	vscodium-bin
 	jetbrains-toolbox
-        flameshot
+    flameshot
 	otf-font-awesome
 	jdk11-openjdk
 	jdk17-openjdk
@@ -157,6 +157,7 @@ else
 
     rm -rf ~/.config/kitty/
     cp -r dotfiles/kitty ~/.config/
+	cp -r dotfiles/dolphinrc ~/.config/
 fi
 
 echo -e "Installing main components, this may take a while..."
