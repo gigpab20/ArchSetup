@@ -60,6 +60,7 @@ i3=(
 	i3lock
 	polybar
 	xrandr
+	picom
 )
 
 hyprland=(
