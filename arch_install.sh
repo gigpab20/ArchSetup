@@ -15,7 +15,8 @@ packages=(
 	docker
 	fastfetch
 	sddm
-
+	postbird-bin
+	postgres
 	kitty
 	blueman
 	bitwarden
@@ -51,7 +52,6 @@ packages=(
 	jdk11-openjdk
 	jdk17-openjdk
 	jdk21-openjdk
-
 )
 
 i3=(
@@ -199,6 +199,15 @@ sudo nano /etc/fstab
 UUID=UUID=e6fed6a2-1419-452d-b970-873adbbedc3e /mnt/Data ext4 defaults 0 2 /mnt/data ext4 defaults 0 2
 
 
+
+sudo su - postgres
+initdb -D /var/lib/postgres/data
+exit
+
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+
+exit
 
 
 reboot
