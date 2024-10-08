@@ -53,6 +53,7 @@ packages=(
 	jdk17-openjdk
 	jdk21-openjdk
 	docker-compose
+	npm
 )
 
 i3=(
