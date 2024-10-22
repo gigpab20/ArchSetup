@@ -54,6 +54,8 @@ packages=(
 	jdk21-openjdk
 	docker-compose
 	npm
+	otf-font-awesome
+	ttf-font-awesome
 )
 
 i3=(
