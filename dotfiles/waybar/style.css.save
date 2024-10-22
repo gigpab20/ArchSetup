@@ -3,18 +3,10 @@
     font-size: 14px;
 }
 
-#custom-power {
-	color: #8266E1;
-}
-
-#clock {
-	color: #8266E1;
-}
 window#waybar {
     background-color: rgba(0,0,0,0);
     color: #ffffff;
 }
-
 #workspaces button {
     background: transparent;
     color: #ffffff;
@@ -42,16 +34,13 @@ window#waybar {
 	font-size:20px;
 }
 
+#clock,
 #battery,
 #network,
 #pulseaudio{
 	color: #ffffff;
-}
+}2
 
-/*#pulseaudio,
-#network {
-    border-right: 1px solid
-}*/
 
 
 #window,
@@ -97,9 +86,6 @@ label:focus {
 
 #network.disconnected {
     background-color: transparent;
-}
-#custom-networklabel {
-	color: #8266e1;
 }
 
 #pulseaudio {

@@ -1,24 +1,43 @@
 {
-    "height": 30,
+    "height": 20,
     "margin": 10,
     "spacing": 4,
     
     "modules-left": [
-        "hyprland/workspaces"
+	"custom/power",
+	"custom/seperator",
+        "hyprland/workspaces",
+	"custom/seperator",
     ],
     "modules-center": [
-        "clock"
     ],
     "modules-right": [
         "pulseaudio",
+	"custom/seperator",
+	"custom/networklabel",
 	"network",
+	"custom/seperator",
         "battery",
+	"custom/seperator",
+	"clock"
     ],
 
+    "custom/seperator": {
+	"format":"|"
+    },
+
+    "custom/networklabel" :{
+	"format": "Network:",
+    },
+
+    "custom/power": {
+	"format":" ",
+	"on-click": "shutdown now",
+	"on-click-right": "reboot",
+    },
+
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}",
-	//"format":"{:%H:%M\n<small>%d.%m.%Y</small>}"
+	"format" : "{:%H:%M}",
     },
     "battery": {
         "states": {
@@ -35,13 +54,10 @@
         "interval": 3
     },
     "network": {
-        "format-wifi": "{essid}  ",
-        "format-ethernet": "{ifname}  ",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
-        "format-linked": "{ifname} (No IP)  ",
+        "format-wifi": "{essid}   ",
+        "format-ethernet": "{ipaddr}   ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    	"on-click":"Advanced Network Configuration"
+    	"on-click":"nmtui"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
