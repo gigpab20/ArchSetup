@@ -136,7 +136,7 @@ if [ ! -f /sbin/yay ]; then
 fi
 
 echo -e "hyprland or i3? (h|i)"
-read desicion
+read "" desicion
 if [[$desicion == "h"]]; then
 
     echo -e "Installing Hyprland, this may take a while..."
