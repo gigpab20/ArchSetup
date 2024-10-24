@@ -154,7 +154,7 @@ if [[$desicion == "h"]]; then
     cp -r dotfiles/kitty ~/.config/
     cp -r dotfiles/waybar ~/.config/
 
-else then
+else
     echo -e "Installing i3, this may take a while..."
     install_software i3-wm
     for SOFTWR in ${i3[@]}; do
