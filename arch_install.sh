@@ -137,6 +137,7 @@ fi
 
 echo hyprland or i3
 read desicion
+
 if [[$desicion == "h"]]; then
 
     echo -e "Installing Hyprland, this may take a while..."
@@ -153,7 +154,7 @@ if [[$desicion == "h"]]; then
     cp -r dotfiles/kitty ~/.config/
     cp -r dotfiles/waybar ~/.config/
 
-else if [[$DECISION == "i"]]; then
+else then
     echo -e "Installing i3, this may take a while..."
     install_software i3-wm
     for SOFTWR in ${i3[@]}; do
