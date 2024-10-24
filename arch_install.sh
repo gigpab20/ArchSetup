@@ -164,7 +164,7 @@ read desicion
 #    rm -rf ~/.config/kitty/
 #    cp -r dotfiles/kitty ~/.config/
 #	cp -r dotfiles/dolphinrc ~/.config/
-fi
+#fi
 
 echo -e "Installing main components, this may take a while..."
 for SOFTWR in ${packages[@]}; do
