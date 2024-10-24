@@ -48,19 +48,9 @@ window#waybar {
 	color: #ffffff;
 }
 
-/*#pulseaudio,
-#network {
-    border-right: 1px solid
-}*/
-
-
 #window,
 #workspaces {
     font-size:26px;
-}
-
-#battery {
-    color: #ffffff;
 }
 
 #battery.charging {
@@ -90,21 +80,11 @@ label:focus {
     background-color: #000000;
 }
 
-#network {
-    margin: 10px;
-    color: #ffffff;
-}
-
-#network.disconnected {
-    background-color: transparent;
-}
-#custom-networklabel {
+#custom-backlightlabel,
+#custom-networklabel, 
+#custom-audiolabel,
+#custom-batterylabel{
 	color: #8266e1;
-}
-
-#pulseaudio {
-    color: #ffffff;
-    margin: 5px;
 }
 
 #pulseaudio.muted {

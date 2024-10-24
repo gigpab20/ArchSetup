@@ -1,0 +1,12 @@
+max-history=3
+sort=-time
+
+background-color=#242424
+border-color=#242424
+text-color=#7A5CCE
+anchor=bottom-right
+
+icons=0
+max-icon-size=64
+default-timeout=3500
+ignore-timeout=1

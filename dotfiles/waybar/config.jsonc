@@ -1,33 +1,51 @@
 {
-    "height": 20,
-    "margin": 10,
-    "spacing": 4,
+    	"height": 20,
+    	"margin": 10,
+    	"spacing": 4,
     
-    "modules-left": [
-	"custom/power",
-	"custom/seperator",
-        "hyprland/workspaces",
-	"custom/seperator",
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "pulseaudio",
-	"custom/seperator",
-	"custom/networklabel",
-	"network",
-	"custom/seperator",
-        "battery",
-	"custom/seperator",
-	"clock"
-    ],
+    	"modules-left": [
+		"custom/power",
+		"custom/seperator",
+        	"hyprland/workspaces",
+		"custom/seperator",
+    	],
+    	"modules-center": [
+    		"custom/media",
+	],
+    	"modules-right": [
+		"custom/seperator",
+		"custom/backlightlabel",
+		"backlight",
+		"custom/seperator",
+		"custom/audiolabel",
+        	"pulseaudio",
+		"custom/seperator",
+		"custom/networklabel",
+		"network",
+		"custom/seperator",
+		"custom/batterylabel",
+        	"battery",
+		"custom/seperator",
+		"clock"
+    	],
+	"custom/backlightlabel":{
+		"format": " BRI",
+	},
 
+	"custom/audiolabel":{
+		"format":" VOL",
+	},
+
+	"custom/batterylabel":{
+		"format":"BAT ",
+	},
+	
     "custom/seperator": {
 	"format":"|"
     },
 
     "custom/networklabel" :{
-	"format": "Network:",
+	"format": "NET",
     },
 
     "custom/power": {
@@ -79,15 +97,11 @@
     },
 
     "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	"exec": "/usr/bin/python3 /home/paul/.config/waybar/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
     }
 }

@@ -1,15 +1,82 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "modules": [],
-"logo": {
-        "type": "auto",
-        "color": {
-		"1": "38;2;123;92;207",
-		"2": "38;2;123;92;207"
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"display": {
+		"pipe":"true",
+		"brightColor":"true",
+		"color":"38;2;123;92;207",
 	},
-        "padding": {
-          "top": 1,
-          "left": 2
-        }
-    },
+
+	"modules": [
+		{
+			"type":"break",
+		},
+		{
+			"type":"break",
+		},
+		{
+			"type":"title",
+		},
+		{
+			"type":"weather",
+		},
+		{
+			"type":"break",
+		},
+		{
+			"type":"chassis",
+		},
+		{
+                        "type":"cpu",
+                },
+		{
+                        "type":"gpu",
+                },
+		{
+                        "type":"memory",
+                },
+		{
+                        "type":"uptime",
+                },
+		{
+			"type":"break",
+		},
+		{
+			"type":"os",
+		},
+		{
+                        "type":"wm",
+                },
+		{
+                        "type":"shell",
+                },
+		{
+                        "type":"terminal",
+                },
+		{
+                        "type":"lm",
+                },
+		{
+                        "type":"player",
+                },
+		{
+                        "type":"theme",
+                },
+		{
+                        "type":"version",
+                },
+	],
+
+	"logo": {
+		"type": "auto",
+		
+		"color": {
+			"1": "38;2;123;92;207",
+			"2": "38;2;123;92;207"
+		},
+
+        	"padding": {
+          		"top": 1,
+          		"left": 2
+        	}
+    	},
 }
