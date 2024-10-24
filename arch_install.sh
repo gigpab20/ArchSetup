@@ -16,7 +16,7 @@ packages=(
 	fastfetch
 	sddm
 	postbird-bin
-	postgres
+	postgresql
 	kitty
 	blueman
 	bitwarden
@@ -135,8 +135,6 @@ if [ ! -f /sbin/yay ]; then
 	fi
 fi
 
-echo hyprland or i3
-read desicion
 
 #if [[$desicion == "h"]]; then
 
