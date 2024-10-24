@@ -135,7 +135,7 @@ if [ ! -f /sbin/yay ]; then
 	fi
 fi
 
-echo hyprland or i3? (h|i)
+echo hyprland or i3
 read desicion
 if [[$desicion == "h"]]; then
 
